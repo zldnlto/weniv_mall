@@ -1,0 +1,260 @@
+/* common css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  /*리셋중에 지저분한거 나중에 합쳐요*/
+}
+
+.ir {
+  position: absolute;
+  clip-path: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  /*일단 네이버 방식 있는거 쓰는편인데 교안대로 업데이트해도 ㄱㅊ */
+}
+
+ul,
+li {
+  list-style: none;
+}
+dl,
+dt,
+dd {
+  font-style: normal;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.header-area {
+  padding: 10px 0;
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub-menu ul {
+  display: flex;
+  gap: 30px;
+}
+section {
+  border: 3px solid #000;
+  min-height: 40vh;
+}
+
+/* title-area */
+main {
+  min-height: 100vh;
+}
+.title-area {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.title-area h2 {
+  font-size: 3em;
+  color: yellow;
+}
+.title-area p {
+  color: gray;
+}
+
+/* items-area */
+.items-area {
+  margin-top: 100px;
+}
+
+/* 카드css */
+.dummy {
+  border: 1px solid #000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-shrink: 0;
+}
+.box {
+  min-height: 650px;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 190px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+  margin: 100px;
+}
+.card:hover {
+  height: 450px;
+}
+.imgBx {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -50px;
+  background-color: #fff;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  transition: 0.5s;
+}
+.card:hover .imgBx {
+  width: 250px;
+  height: 250px;
+}
+.imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.card .content .details {
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateY(150px);
+}
+.card:hover .content .details {
+  transform: translateY(0px);
+}
+.card .content .details h2 {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #555;
+  line-height: 4em;
+}
+
+.card .content .details .data {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.card .content .details .data h3 {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.2em;
+  font-weight: 600;
+}
+.card .content .details .data h3 span {
+  font-size: 0.85em;
+  font-weight: 400;
+  opacity: 0.5;
+}
+.card .content .details .actionBtn {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 20px; */
+}
+.card .content .details .actionBtn button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #ff5f95;
+  color: #fff;
+  cursor: pointer;
+}
+.card .content .details .actionBtn button:nth-child(2) {
+  border: 1px solid #999;
+  color: #999;
+  background-color: #fff;
+}
+
+/* 카드 css 끝 */
+
+/* FOOTER */
+
+.footer-area {
+  white-space: nowrap;
+  background-color: #222;
+  color: #fff;
+}
+.footer-head {
+  width: 1280px;
+  margin: 0 auto;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0;
+  border-bottom: 1px solid #999;
+}
+/* 수평선 가상요소로 시도 
+.footer-head::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  border-bottom: 1px solid #000;
+} */
+
+.sns-info {
+  display: flex;
+  gap: 10px;
+}
+.sns-info div a {
+  padding: 5px;
+  color: #fff;
+}
+.footer-bottom {
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0;
+}
+
+.footer-bottom address dl {
+    display: flex;
+    gap: 10px;
+}
+.footer-bottom address dt {
+    margin-left: 10px;
+}
+
+.footer-bottom address dt::after {
+    content: "|";
+    margin-left: 10px;
+  }
+  
+.copy-right {
+  text-align: center;
+}

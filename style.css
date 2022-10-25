@@ -1,4 +1,11 @@
 /* common css */
+@font-face {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +16,6 @@ body {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-  /*리셋중에 지저분한거 나중에 합쳐요*/
 }
 
 .ir {
@@ -38,24 +44,29 @@ a {
 
 .container {
   margin: 0 auto;
-}
+}  
 
 /* HEADER */
 
 .header-area {
-  padding: 10px 0;
-  width: 1280px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 1280px;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: "yg-jalnan";
+  letter-spacing: 0.1em;
+  color: #ff5f95;
 }
 .sub-menu ul {
   display: flex;
   gap: 30px;
 }
 section {
-  border: 3px solid #000;
   min-height: 40vh;
 }
 
@@ -64,39 +75,48 @@ main {
   min-height: 100vh;
 }
 .title-area {
-  background-color: #000;
+  background-color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 10px;
+}
+.title-area .title {
+  margin: 30px;
 }
 .title-area h2 {
   font-size: 3em;
-  color: yellow;
+  color: #ff5f95;
+  font-family: "yg-jalnan";
 }
 .title-area p {
-  color: gray;
+  color: white;
+  font-weight: 700;
 }
 
 /* items-area */
 .items-area {
   margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 /* 카드css */
-.dummy {
+/* .dummy {
   border: 1px solid #000;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   flex-shrink: 0;
-}
+} */
 .box {
-  min-height: 650px;
+  min-height: 510px;
 }
 
 .card {
+  transform: scale(0.9);
   position: relative;
   width: 350px;
   height: 190px;
@@ -104,11 +124,12 @@ main {
   border-radius: 20px;
   box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
   transition: 0.5s;
-  margin: 100px;
+  margin: 0 50px;
 }
 .card:hover {
-  height: 450px;
+  height: 480px;
 }
+
 .imgBx {
   position: absolute;
   left: 50%;
@@ -144,7 +165,7 @@ main {
   overflow: hidden;
 }
 .card .content .details {
-  padding: 40px;
+  padding: 0 40px 40px 40px;
   text-align: center;
   width: 100%;
   transition: 0.5s;
@@ -155,9 +176,25 @@ main {
 }
 .card .content .details h2 {
   font-size: 1.25em;
+  position: relative;
+  top: 10px;
   font-weight: 600;
   color: #555;
-  line-height: 4em;
+  width: 70%;
+  margin: 0 auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 60px;
+}
+
+.card:hover .content .details h2 {
+  text-overflow: initial;
+  overflow: unset;
+  width: 100%;
+  white-space: normal;
+  word-break: keep-all;
+  top: -15px;
 }
 
 .card .content .details .data {
@@ -243,18 +280,23 @@ main {
 }
 
 .footer-bottom address dl {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 .footer-bottom address dt {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .footer-bottom address dt::after {
-    content: "|";
-    margin-left: 10px;
-  }
-  
+  content: "|";
+  margin-left: 10px;
+}
+
 .copy-right {
   text-align: center;
+}
+
+footer i:hover {
+  cursor: pointer;
+  color: #ff5f95;
 }

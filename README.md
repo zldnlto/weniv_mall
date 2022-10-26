@@ -1,3 +1,5 @@
+https://gajua.github.io/weniv_mall/
+
 # weniv_mall
 
 ## 쇼핑몰 사이트 SPA 페이지 구현 프로젝트입니다.
